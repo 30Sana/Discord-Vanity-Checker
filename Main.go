@@ -59,16 +59,7 @@ func main() {
 		"Sec-Fetch-Mode":     "cors",
 		"Accept-Language":    "en-U",
 	}
-	data := map[string]interface{}{
-		"with_counts": "true",
-	}
-
-	// Marshal the map into JSON
-	jsonBody, err := json.Marshal(data)
-	if err != nil {
-		fmt.Println("Error marshaling JSON:", err)
-		return
-	}
+	var data = []byte(nil)
 
 	numConcurrentRequests := 100 // Stable / Good speed --> 750 / 5
 	batchSize := 1
